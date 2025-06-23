@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TDE</title>
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos adicionales para la sección de anuncios -->
+    <style>
+        .announcements-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 1000px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #4CAF50;
+        }
+        
+        .announcements-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .announcements-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .announcement-badge {
+            background-color: #4CAF50;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+        
+        .announcement-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .announcement-item:last-child {
+            border-bottom: none;
+        }
+        
+        .announcement-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .announcement-content {
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Estilos para el botón del footer */
+        .footer button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado del dashboard -->
+    <header class="dashboard-header">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="../images/imagen_tde_logo.jpg" alt="Logo de Tecnología y Desarrollo Electromecánico" loading="lazy">
+            </div>
+        </div>
+        <!-- Botón de cierre de sesión con icono SVG -->
+        <button class="logout-btn" onclick="logout()" aria-label="Cerrar sesión">
+            <span>Cerrar Sesión</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path fill="currentColor" d="M16,17V14H9V10H16V7L21,12L16,17M14,2A2,2 0 0,1 16,4V6H14V4H5V20H14V18H16V20A2,2 0 0,1 14,22H5A2,2 0 0,1 3,20V4A2,2 0 0,1 5,2H14Z" />
+            </svg>
+        </button>
+    </header>
+
+    <!-- Contenedor principal -->
+    <main class="dashboard-main">
+        <!-- Sección de módulos interactivos -->
+        <section id="modules-container" aria-labelledby="modules-heading">
+            <!-- Cada módulo tiene un ID único y atributos de accesibilidad -->
+            <div class="module" id="usuarios" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-users-cog"></i></div>
+                <div class="module-title">Gestión de Usuarios y Roles</div>
+            </div>
+            <div class="module" id="recursos_humanos" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
+                <div class="module-title">Recursos Humanos</div>
+            </div>
+            <div class="module" id="inventario" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-boxes"></i></div>
+                <div class="module-title">Inventario</div>
+            </div>
+            <div class="module" id="transportes" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-truck"></i></div>
+                <div class="module-title">Transportes</div>
+            </div>
+            <div class="module" id="herramientas" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-tools"></i></div>
+                <div class="module-title">Herramientas y Equipos</div>
+            </div>
+            <div class="module" id="compras" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-shopping-cart"></i></div>
+                <div class="module-title">Compras y Proveedores</div>
+            </div>
+            <div class="module" id="proyectos" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-project-diagram"></i></div>
+                <div class="module-title">Proyectos</div>
+            </div>
+            <div class="module" id="clientes" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-industry"></i></div>
+                <div class="module-title">Plantas (Clientes)</div>
+            </div>
+            <div class="module" id="reportes" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-chart-bar"></i></div>
+                <div class="module-title">Reportes y Análisis</div>
+            </div>
+            <div class="module" id="auditoria" role="button" tabindex="0">
+                <div class="module-icon" aria-hidden="true"><i class="fas fa-search-dollar"></i></div>
+                <div class="module-title">Auditoría</div>
+            </div>
+        </section>
+
+        <!-- Sección de anuncios corporativos -->
+        <section class="announcements-container" aria-labelledby="announcements-heading">
+            <div class="announcements-header">
+                <h1 class="announcements-title" id="announcements-heading">
+                    Avisos de la empresa
+                    <span class="announcement-badge">Nuevo</span>
+                </h1>
+            </div>
+            
+            <!-- Ejemplo de anuncio 1 -->
+            <article class="announcement-item">
+                <time class="announcement-date" datetime="2025-04-20">20 de abril 2025</time>
+                <div class="announcement-content">
+                    <h3>Inicio de periodo de solicitudes</h3>
+                    <p>Se informa a todos los empleados que el periodo de solicitudes para vacaciones del segundo trimestre estará abierto desde el 22 de abril hasta el 30 de abril.</p>
+                </div>
+            </article>
+            
+            <!-- Ejemplo de anuncio 2 -->
+            <article class="announcement-item">
+                <time class="announcement-date" datetime="2025-04-18">18 de abril 2025</time>
+                <div class="announcement-content">
+                    <h3>Actualización del sistema de inventario</h3>
+                    <p>El próximo lunes 22 de abril se realizará una actualización del sistema de inventario. El sistema estará fuera de servicio desde las 20:00 hasta las 23:00 horas.</p>
+                </div>
+            </article>
+            
+            <!-- Ejemplo de anuncio 3 -->
+            <article class="announcement-item">
+                <time class="announcement-date" datetime="2025-04-15">15 de abril 2025</time>
+                <div class="announcement-content">
+                    <h3>Capacitación en seguridad</h3>
+                    <p>Recordatorio: La capacitación obligatoria en seguridad laboral se llevará a cabo este viernes 19 de abril a las 10:00 en el salón de conferencias.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Botón de regreso (oculto inicialmente) -->
+        <button id="back-button" class="hidden" onclick="goBack()" aria-label="Volver al menú principal">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+            </svg>
+            <span>Regresar</span>
+        </button>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2025. Tecnología y Desarrollo Electromecánico. Todos los derechos reservados</p>
+        <button onclick="window.location.href='../bienvenida.html'">Volver al Inicio</button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/dashboard.js"></script>
+    <script>
+        // Función de respaldo para cerrar sesión
+        if (typeof logout !== 'function') {
+            function logout() {
+                localStorage.removeItem('userSession');
+                window.location.href = "../pages/empleados_login.html";
+            }
+        }
+
+        // Redirección a módulos al hacer clic
+        document.querySelectorAll('.module').forEach(module => {
+            // Efecto hover
+            module.addEventListener('mouseover', function() {
+                this.classList.add('animate__pulse', 'animate__faster');
+                setTimeout(() => {
+                    this.classList.remove('animate__pulse', 'animate__faster');
+                }, 1000);
+            });
+            
+            // Efecto clic y redirección
+            module.addEventListener('click', function() {
+                const moduleId = this.id;
+                this.style.boxShadow = '0 0 15px rgba(0, 255, 0, 0.7)';
+                setTimeout(() => {
+                    window.location.href = `../pages/${moduleId}.html`;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

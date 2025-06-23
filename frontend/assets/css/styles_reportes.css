@@ -1,0 +1,133 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2e7d32;
+    color: white;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+form {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.7rem;
+    font-size: 15px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1b5e20;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 0.9rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+td textarea {
+    width: 100%;
+    resize: vertical;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.acciones a {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-editar {
+    background-color: #0277bd;
+}
+
+.btn-editar:hover {
+    background-color: #01579b;
+}
+
+.btn-eliminar {
+    background-color: #c62828;
+}
+
+.btn-eliminar:hover {
+    background-color: #b71c1c;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #e0e0e0;
+    color: #333;
+    font-size: 14px;
+    margin-top: 2rem;
+}

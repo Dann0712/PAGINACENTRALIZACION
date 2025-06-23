@@ -1,0 +1,43 @@
+\<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="/centralizacion_pyme/frontend/assets/css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Acceso al Sistema</h2>
+        <form id="loginForm">
+            <input type="text" name="usuario" placeholder="Usuario" required><br>
+            <input type="password" name="contrasena" placeholder="Contraseña" required><br>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p id="mensaje" style="color: red; margin-top: 10px;"></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            fetch("/centralizacion_pyme/backend/auth/login.php", {
+                method: "POST",
+                body: new FormData(this)
+            })
+            .then(res => {
+                if (!res.ok) throw new Error("No se pudo conectar al servidor.");
+                return res.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    window.location.href = "/centralizacion_pyme/frontend/dashboard.php";
+                } else {
+                    document.getElementById("mensaje").textContent = "Credenciales incorrectas.";
+                }
+            })
+            .catch(error => {
+                document.getElementById("mensaje").textContent = "Error de conexión: " + error.message;
+            });
+        });
+    </script>
+</body>
+</html>

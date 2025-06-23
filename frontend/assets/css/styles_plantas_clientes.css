@@ -1,0 +1,63 @@
+.contenedor {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+}
+
+form {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+form input, form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+form button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.7rem;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.btn-editar {
+    background: #1976d2;
+    color: white;
+    padding: 0.4rem 0.7rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-eliminar {
+    background: #c62828;
+    color: white;
+    padding: 0.4rem 0.7rem;
+    border-radius: 5px;
+    text-decoration: none;
+}

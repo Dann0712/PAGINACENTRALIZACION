@@ -1,0 +1,84 @@
+
+/* Contenedor principal */
+.login-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 1.5rem;
+}
+
+/* Formulario */
+form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+form button {
+    padding: 0.8rem 1.5rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+form button:hover {
+    background-color: #388e3c;
+}
+
+/* Tabla de anuncios existentes */
+.anuncios-tabla {
+    margin-top: 2rem;
+}
+.anuncios-tabla table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.anuncios-tabla th,
+.anuncios-tabla td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.anuncios-tabla th {
+    background-color: #c8e6c9;
+    color: #1b5e20;
+}
+.anuncios-tabla td .acciones {
+    display: flex;
+    gap: 0.5rem;
+}
+.anuncios-tabla td .acciones form {
+    display: inline;
+}
+.anuncios-tabla button.editar {
+    background-color: #0288d1;
+}
+.anuncios-tabla button.borrar {
+    background-color: #d32f2f;
+}
+.anuncios-tabla button.editar:hover {
+    background-color: #0277bd;
+}
+.anuncios-tabla button.borrar:hover {
+    background-color: #c62828;
+}
